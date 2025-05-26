@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
   "Mobile Shopping Platform Website": "https://github.com/N1vas-B/Intern",
   "Task Management App": "https://github.com/N1vas-B/TaskApplication",
   "Book Store Management API": "https://github.com/N1vas-B/bookstore",
-  "Blog Platform": "https://github.com/N1vas-B/portfolio"
+  "Blog Platform": "https://github.com/N1vas-B/MyPortfolio.git"
 };
 
 
