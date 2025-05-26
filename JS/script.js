@@ -228,3 +228,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+function openSidebar() {
+    document.getElementById("mySidebar").style.left = "0";
+    document.getElementById("overlay").style.display = "block";
+    document.querySelector('.brand-toggle').style.display = 'none';
+  }
+
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.left = "-260px";
+    document.getElementById("overlay").style.display = "none";
+    document.querySelector('.brand-toggle').style.display = 'flex';
+  }
