@@ -228,14 +228,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-function openSidebar() {
+
+ function openSidebar()
+  {
     document.getElementById("mySidebar").style.left = "0";
     document.getElementById("overlay").style.display = "block";
     document.querySelector('.brand-toggle').style.display = 'none';
   }
-
-  function closeSidebar() {
+  function closeSidebar()
+  {
     document.getElementById("mySidebar").style.left = "-260px";
     document.getElementById("overlay").style.display = "none";
     document.querySelector('.brand-toggle').style.display = 'flex';
   }
+// Back to Top Button
+const backToTopButton = document.getElementById('backToTopBtn');
+window.addEventListener('scroll', () =>
+  {
+    if (window.pageYOffset > 300)
+      {
+         backToTopButton.style.display = 'flex';
+      } 
+    else
+    {
+       backToTopButton.style.display = 'none';
+    }
+  });
+backToTopButton.addEventListener('click', () =>
+  {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+  });
+  });
+  let lastScrollPosition = 0;
+const sidebarToggle = document.querySelector('.brand-toggle');
+
+window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.pageYOffset;
+    
+    // Hide toggle when scrolling down, show when scrolling up
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 100) {
+        // Scrolling down
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.pointerEvents = 'none';
+    } else {
+        // Scrolling up
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.pointerEvents = 'auto';
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+  });
