@@ -359,6 +359,7 @@ p, li, .text-content {
   margin-bottom: 15px;
   line-height: 1.6;
   color: var(--text-color);
+  text-align: justify;
 }
 .personal-info {
   margin-top: 30px;
@@ -449,6 +450,7 @@ p, li, .text-content {
 }
 .internship-experience p{
   text-align: justify;
+  font-size: large;
 }
 /* Career & Personal Goals Section */
 .dark-mode .career-goals h3,
