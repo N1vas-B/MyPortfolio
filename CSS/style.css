@@ -447,7 +447,9 @@ p, li, .text-content {
   background-color: #121212;
   color: var(--text-color);
 }
-
+.internship-experience p{
+  text-align: justify;
+}
 /* Career & Personal Goals Section */
 .dark-mode .career-goals h3,
 .dark-mode .personal-goals h3 {
@@ -458,7 +460,9 @@ p, li, .text-content {
 .dark-mode .personal-goals h3::after {
   background: var(--primary-color);
 }
-
+.dark-mode .internship-experience p{
+  color: white;
+}
 .dark-mode .career-goals li,
 .dark-mode .personal-goals li {
   color: var(--text-color);
