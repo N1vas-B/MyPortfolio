@@ -254,29 +254,23 @@ window.addEventListener('scroll', () =>
        backToTopButton.style.display = 'none';
     }
   });
-backToTopButton.addEventListener('click', () =>
+   backToTopButton.addEventListener('click', () =>
   {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+     window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
   });
   });
   let lastScrollPosition = 0;
 const sidebarToggle = document.querySelector('.brand-toggle');
-
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
-    
-    // Hide toggle when scrolling down, show when scrolling up
     if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 100) {
-        // Scrolling down
         sidebarToggle.style.opacity = '0';
         sidebarToggle.style.pointerEvents = 'none';
     } else {
-        // Scrolling up
         sidebarToggle.style.opacity = '1';
         sidebarToggle.style.pointerEvents = 'auto';
-    }
-    
+    } 
     lastScrollPosition = currentScrollPosition;
   });

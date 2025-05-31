@@ -1,4 +1,3 @@
-/* ====== Global Styles ====== */
 :root {
   --primary-color: #3498db;
   --secondary-color: #2c3e50;
@@ -79,25 +78,22 @@ p, li, .text-content {
   color: var(--primary-color);
   font-weight: 600;
 }
-/* Sidebar styles (unchanged mostly) */
 .sidebar {
   height: 100%;
   width: 180px;
   position: fixed;
   top: 0;
   left: -260px;
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* This creates the blur effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: 0.3s;
   padding-top: 60px;
   z-index: 1001;
-  border-right: 1px solid rgba(255, 255, 255, 0.1); /* Optional subtle border */
+  border-right: 1px solid rgba(255, 255, 255, 0.1); 
 }
-
-/* Dark mode version */
 .dark-mode .sidebar {
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.1); 
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 .sidebar a {
@@ -398,6 +394,111 @@ p, li, .text-content {
 .personal-info .info-title{
   color: var(--text-color);
 }
+/* Goals Sections */
+.career-goals,
+.personal-goals {
+  margin: 25px 0;
+}
+.career-goals h3,
+.personal-goals h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 8px;
+}
+.career-goals h3::after,
+.personal-goals h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: coral;
+}
+.career-goals ul,
+.personal-goals ul {
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-type: none;
+}
+.career-goals li,
+.personal-goals li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+.career-goals li::before,
+.personal-goals li::before {
+  content: "▹";
+  color: coral;
+  font-size: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* Dark Mode Wrapper */
+.dark-mode {
+  --primary-color: #85baff;
+  --text-color: #e0e0e0;
+  background-color: #121212;
+  color: var(--text-color);
+}
+
+/* Career & Personal Goals Section */
+.dark-mode .career-goals h3,
+.dark-mode .personal-goals h3 {
+  color: var(--primary-color);
+}
+
+.dark-mode .career-goals h3::after,
+.dark-mode .personal-goals h3::after {
+  background: var(--primary-color);
+}
+
+.dark-mode .career-goals li,
+.dark-mode .personal-goals li {
+  color: var(--text-color);
+}
+
+.dark-mode .career-goals li::before,
+.dark-mode .personal-goals li::before {
+  color: var(--primary-color);
+}
+
+/* Goals Section Cards */
+.dark-mode .goals-section h3 {
+  color: var(--primary-color);
+}
+
+.dark-mode .goal-card {
+  background: #1e1e1e;
+  border: 1px  #333;
+  color: var(--text-color);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.dark-mode .goal-card h4 {
+  color: var(--primary-color);
+}
+
+/* Interests Section */
+.dark-mode .interests-section h3 {
+  color: var(--primary-color);
+}
+
+.dark-mode .interest-item {
+  background: #1e1e1e;
+  color: var(--text-color);
+}
+
+.dark-mode .interest-icon {
+  color: var(--primary-color);
+}
 .resume-buttons .btn {
   border-radius: 5px;
   font-size: 0.95rem;
@@ -406,31 +507,23 @@ p, li, .text-content {
   transition: all 0.3s ease;
   text-align: center;
 }
+
 .resume-buttons .btn-primary {
+  background: linear-gradient(to right, #4facfe, #3e5354);
   color: #fff;
-  text-decoration: none;
   border-radius: 25px;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  font-weight: bold;
 }
+
 .resume-buttons .btn-primary:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
 }
-.resume-buttons .btn-secondary {
-  margin-left: 2%;
-  background-color: #e6683c;
-  color: white;
-  text-decoration: none;
-  width: 120px;
-  height: 40px;
-  display: inline-block;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 25px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
+
 .resume-buttons .btn-secondary:hover {
   background-color: #666;
   transform: translateY(-2px);
@@ -603,7 +696,6 @@ p, li, .text-content {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
-
 .project-image {
   height: 200px;
   overflow: hidden;
@@ -840,12 +932,10 @@ p, li, .text-content {
   z-index: 99;
   transition: all 0.3s ease;
 }
-
 .back-to-top:hover {
   background-color: #ff7f50;
   transform: translateY(-3px);
 }
-
 .back-to-top i {
   margin-top: 2px;
 }
@@ -939,26 +1029,22 @@ p, li, .text-content {
 .footer p{
   color: white;
 }
-
 /* Certificates Section */
 #certificates {
   padding: 4rem 0;
   background-color: #f9f9f9;
 }
-
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
   font-size: 2.5rem;
   color: #333;
 }
-
 .certificates-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
 /* Certificate Slider */
 .certificate-slider {
   position: relative;
@@ -966,7 +1052,6 @@ p, li, .text-content {
   margin: 0 auto;
   overflow: hidden;
 }
-
 .certificate-slide {
   display: none;
   flex-direction: column;
@@ -978,7 +1063,6 @@ p, li, .text-content {
 .certificate-slide.active {
   display: flex;
 }
-
 .certificate-image {
   width: 100%;
   max-width: 400px;
@@ -986,38 +1070,32 @@ p, li, .text-content {
   border-radius: 8px;
   overflow: hidden;
 }
-
 .certificate-image img {
   width: 100%;
   height: auto;
   display: block;
 }
-
 .certificate-details {
   width: 100%;
   max-width: 500px;
   padding: 0 1rem;
 }
-
 .certificate-details h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
   color: #222;
 }
-
 .issuer, .date {
   font-size: 1rem;
   color: #666;
   margin-bottom: 0.5rem;
 }
-
 .description {
   font-size: 1rem;
   line-height: 1.6;
   color: #444;
   margin-top: 1rem;
 }
-
 /* Navigation Arrows */
 .slider-arrow {
   position: absolute;
@@ -1038,19 +1116,15 @@ p, li, .text-content {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
 .slider-arrow:hover {
   background: rgba(255, 255, 255, 0.9);
 }
-
 .slider-arrow.prev {
   left: 10px;
 }
-
 .slider-arrow.next {
   right: 10px;
 }
-
 /* Dots Indicator */
 .slider-dots {
   display: flex;
@@ -1058,7 +1132,6 @@ p, li, .text-content {
   margin-top: 2rem;
   gap: 10px;
 }
-
 .dot {
   width: 12px;
   height: 12px;
@@ -1067,55 +1140,44 @@ p, li, .text-content {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .dot.active {
   background-color: #333;
 }
-
 /* Responsive Adjustments */
 @media (min-width: 768px) {
   .certificate-slide {
     flex-direction: row;
     justify-content: center;
   }
-  
   .certificate-image {
     width: 45%;
   }
-  
   .certificate-details {
     width: 45%;
   }
-  
   .section-title {
     font-size: 3rem;
   }
-  
   .certificate-details h3 {
     font-size: 2rem;
   }
-  
   .description, .issuer, .date {
     font-size: 1.1rem;
   }
 }
-
 @media (max-width: 480px) {
   .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-  
   .certificate-details h3 {
     font-size: 1.5rem;
   }
-  
   .slider-arrow {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
   }
-  
   .certificate-slide {
     gap: 1.5rem;
   }
@@ -1124,46 +1186,36 @@ p, li, .text-content {
 .dark-mode #certificates {
   background-color: #121212;
 }
-
 .dark-mode .section-title {
   color: #f0f0f0;
 }
-
 .dark-mode .certificate-details {
   color: #e0e0e0;
 }
-
 .dark-mode .certificate-details h3 {
   color: mediumslateblue; 
 }
-
 .dark-mode .issuer,
 .dark-mode .date {
   color: #b0b0b0;
 }
-
 .dark-mode .description {
   color: #d0d0d0;
 }
-
 .dark-mode .certificate-image {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background-color: #1e1e1e; /* For certificates with transparent backgrounds */
 }
-
 .dark-mode .slider-arrow {
   background: rgba(30, 30, 30, 0.7);
   color: #f0f0f0;
 }
-
 .dark-mode .slider-arrow:hover {
   background: rgba(50, 50, 50, 0.9);
 }
-
 .dark-mode .dot {
   background-color: #444;
 }
-
 .dark-mode .dot.active {
   background-color: mediumslateblue; /* Matching the h3 color */
 }
@@ -1172,7 +1224,6 @@ p, li, .text-content {
   background-color: #121212;
   color: #e0e0e0;
 }
-
 .dark-mode p,
 .dark-mode li,
 .dark-mode .text-content,
@@ -1296,8 +1347,6 @@ p, li, .text-content {
 .dark-mode .resume-buttons .btn-secondary:hover {
   background-color: #3a3a3a;
 }
-/* ====== Media Queries ====== */
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .container {
@@ -1309,42 +1358,33 @@ p, li, .text-content {
   .hero-content {
     flex-direction: column;
     text-align: center;
-  }
-  
+  } 
   .hero-text {
     margin-bottom: 40px;
   }
-  
   .about-content {
     flex-direction: column;
   }
-  
   .about-image {
     margin-bottom: 40px;
   }
-  
   .timeline::before {
     left: 31px;
   }
-  
   .timeline-item {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
-  
   .timeline-item::after {
     left: 21px;
   }
-  
   .right {
     left: 0;
   }
-  
   .contact-content {
     flex-direction: column;
   }
-  
   .contact-info {
     margin-bottom: 40px;
   }
@@ -1354,30 +1394,24 @@ p, li, .text-content {
   .navbar-toggler {
     display: block;
   }
-  
   .navbar-nav {
     display: none;
     width: 100%;
     flex-direction: column;
     margin-top: 20px;
   }
-  
   .navbar-nav.show {
     display: flex;
   }
-  
   .nav-item {
     margin: 10px 0;
   }
-  
   .hero-text h1 {
     font-size: 2.5rem;
   }
-  
   .hero-text h2 {
     font-size: 1.5rem;
   }
-  
   .hero-image img {
     width: 280px;
     height: 280px;
@@ -1396,24 +1430,19 @@ p, li, .text-content {
   .section-title {
     font-size: 2rem;
   }
-  
   .hero-text h1 {
     font-size: 2rem;
   }
-  
   .hero-text h2 {
     font-size: 1.3rem;
   }
-  
   .hero-image img {
     width: 250px;
     height: 250px;
   }
-  
   .timeline-content {
     padding: 15px;
   }
-  
   .form-group input,
   .form-group textarea {
     padding: 8px;
@@ -1437,7 +1466,6 @@ p, li, .text-content {
     max-width: 700px;
     height: 450px;
   }
-  
   .certificate-details h3 {
     font-size: 1.6rem;
   }
@@ -1447,28 +1475,23 @@ p, li, .text-content {
   #certificates {
     padding: 60px 20px;
   }
-  
   .certificate-slider {
     height: auto;
     min-height: 500px;
   }
-  
   .certificate-slide {
     flex-direction: column;
     height: auto;
     padding: 40px 0;
   }
-  
   .certificate-image {
     padding: 20px;
     flex: none;
     max-height: 300px;
   }
-  
   .certificate-details {
     padding: 20px 30px;
   }
-  
   .slider-arrow {
     width: 40px;
     height: 40px;
@@ -1479,21 +1502,17 @@ p, li, .text-content {
   .certificate-slider {
     border-radius: 10px;
   }
-  
   .certificate-details h3 {
     font-size: 1.4rem;
   }
-  
   .certificate-image img {
     max-height: 250px;
   }
-  
   .slider-arrow {
     width: 36px;
     height: 36px;
     font-size: 18px;
   }
-  
   .dot {
     width: 10px;
     height: 10px;
@@ -1504,19 +1523,15 @@ p, li, .text-content {
   #certificates {
     padding: 50px 15px;
   }
-  
   .certificate-slide {
     padding: 30px 0;
   }
-  
   .certificate-details {
     padding: 20px;
   }
-  
   .certificate-image img {
     max-height: 200px;
   }
-  
   .slider-arrow {
     width: 32px;
     height: 32px;
@@ -1527,7 +1542,6 @@ p, li, .text-content {
   .certificate-details h3 {
     font-size: 1.3rem;
   }
-  
   .description {
     font-size: 0.9rem;
   }
@@ -1539,28 +1553,23 @@ p, li, .text-content {
     color: black !important;
     padding: 20px 0 !important;
   }
-  
   .certificate-slider {
     box-shadow: none !important;
     background: transparent !important;
     height: auto !important;
-  }
-  
+  } 
   .certificate-slide {
     position: relative !important;
     opacity: 1 !important;
     flex-direction: row !important;
     color: black !important;
   }
-  
   .certificate-details h3 {
     color: black !important;
   }
-  
   .issuer, .date {
     color: #555 !important;
   }
-  
   .slider-arrow, .slider-dots {
     display: none !important;
   }
@@ -1572,46 +1581,37 @@ p, li, .text-content {
     margin: 10% auto;
     padding: 20px;
   }
-
   .modal-image-container {
     height: 250px;
     margin-bottom: 15px;
   }
-
   .modal-details h2 {
     font-size: 1.5rem;
   }
-
   .project-meta {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-
   .github-link {
     width: 100%;
     text-align: center;
     margin-top: 10px;
   }
 }
-
 @media (max-width: 575px) {
   .modal-content {
     padding: 15px;
   }
-
   .modal-image-container {
     height: 200px;
   }
-
   .modal-details {
     padding: 0 5px;
   }
-
   .modal-tech-used .tech-tags {
     gap: 6px;
   }
-
   .modal-tech-used .tech-tag {
     padding: 4px 8px;
     font-size: 0.8rem;
@@ -1621,15 +1621,12 @@ p, li, .text-content {
   .modal-image-container {
     height: 180px;
   }
-
   .modal-details h2 {
     font-size: 1.3rem;
   }
-
   .modal-features li {
     font-size: 0.9rem;
   }
-
   .close-modal {
     right: 10px;
     top: 5px;
