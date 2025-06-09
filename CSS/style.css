@@ -512,16 +512,22 @@ p, li, .text-content {
   display: inline-block;
   transition: all 0.3s ease;
   text-align: center;
+  padding: 10px 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #4facfe, #191a1a);
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .resume-buttons .btn-primary {
-  background: linear-gradient(to right, #4facfe, #3e5354);
+  background: linear-gradient(to right, #4facfe, #212222);
   color: #fff;
   border-radius: 25px;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   font-weight: bold;
+  width: 120px;
 }
 
 .resume-buttons .btn-primary:hover {
