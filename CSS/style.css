@@ -1027,14 +1027,85 @@ p, li, .text-content {
   min-height: 150px;
 }
 /* ====== Footer ====== */
+/* Footer Base */
 .footer {
+  background: rgba(20, 20, 20, 0.85);
+  color: #f0f0f0;
+  backdrop-filter: blur(8px);
+  padding: 30px 0;
   text-align: center;
-  padding: 20px 0;
-  background-color: var(--secondary-color);
+  font-family: 'Segoe UI', sans-serif;
 }
-.footer p{
-  color: white;
+
+/* Container */
+.footer .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
+/* Copyright */
+.footer p {
+  margin: 0 0 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Navigation Links */
+.footer-nav {
+  margin: 10px 0;
+}
+
+.footer-nav a {
+  color: #aaa;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+/* Social Icons */
+.social-links {
+  margin: 15px 0;
+}
+
+.social-links a {
+  color: #aaa;
+  margin: 0 8px;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  color: #1da1f2; /* Twitter Blue as default hover */
+  transform: scale(1.2);
+}
+
+/* Back to Top */
+.back-to-top {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #f9f7f7;
+  transition: color 0.3s;
+}
+
+.back-to-top:hover {
+  color: #060505;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-nav a, .social-links a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
 /* Certificates Section */
 #certificates {
   padding: 4rem 0;

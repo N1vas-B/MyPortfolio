@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Apply saved theme on load
+document.addEventListener('DOMContentLoaded', () =>
+  {
     const savedTheme = localStorage.getItem('theme');
     const themeToggle = document.querySelector('.theme-toggle');
 
@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
     // Theme toggle
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
@@ -68,13 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-const roles = [
+const roles =
+[
     "I'm a Web Developer",
     "I'm a Full Stack Developer",
     "I'm a UI/UX Designer",
     "I'm a Software Engineer"
 ];
-
 const textElement = document.getElementById("typewriter-text");
 let roleIndex = 0;
 let charIndex = 0;
@@ -84,38 +83,33 @@ let typingSpeed = 100;
 function type() {
     const currentRole = roles[roleIndex];
     
-    // Display the current text
     textElement.textContent = currentRole.substring(0, charIndex);
     
     if (!isDeleting && charIndex < currentRole.length) {
-        // Typing the next character
         charIndex++;
         typingSpeed = 100;
     } else if (isDeleting && charIndex > 0) {
-        // Deleting the previous character
         charIndex--;
         typingSpeed = 50;
     } else if (charIndex === currentRole.length) {
-        // Finished typing, wait then start deleting
         isDeleting = true;
-        typingSpeed = 1500; // Pause at end of word
+        typingSpeed = 1500;
     } else if (isDeleting && charIndex === 0) {
-        // Finished deleting, move to next role
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        typingSpeed = 500; // Pause before next word
+        typingSpeed = 500;
     }
-    
     setTimeout(type, typingSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Start the typewriter effect
+document.addEventListener("DOMContentLoaded", () =>
+{
     setTimeout(type, 500);
 });
 
-// JavaScript for Interactive Slider
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function()
+{
   const slides = document.querySelectorAll('.certificate-slide');
   const dots = document.querySelectorAll('.dot');
   const prevBtn = document.querySelector('.prev');
@@ -141,38 +135,31 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(currentSlide);
   }
 
-  // Event Listeners
+ 
   nextBtn.addEventListener('click', nextSlide);
   prevBtn.addEventListener('click', prevSlide);
   
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => showSlide(index));
   });
-
-  // Auto-rotate (optional)
-  // setInterval(nextSlide, 5000);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function()
+{
   const projectCards = document.querySelectorAll('.project-card');
   const modal = document.getElementById('projectModal');
   const closeModal = document.querySelector('.close-modal');
-
-  // GitHub links for each project (add your actual links here)
-  const githubLinks = {
+  const githubLinks =
+  {
   "Mobile Shopping Platform Website": "https://github.com/N1vas-B/Intern",
   "Task Management App": "https://github.com/N1vas-B/TaskApplication",
   "Book Store Management API": "https://github.com/N1vas-B/bookstore",
   "Blog Platform": "https://github.com/N1vas-B/MyPortfolio.git"
-};
-
-
+  };
   projectCards.forEach(card => {
     const viewBtn = card.querySelector('.view-details-btn');
-    
     viewBtn.addEventListener('click', function(e) {
-      e.stopPropagation(); // Prevent card click from triggering
-      
+      e.stopPropagation(); 
       const title = card.getAttribute('data-title');
       const image = card.getAttribute('data-image');
       const description = card.getAttribute('data-description');
@@ -213,7 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = 'hidden';
     });
   });
-
   // Close modal
   closeModal.addEventListener('click', function() {
     modal.style.display = 'none';
@@ -262,8 +248,9 @@ window.addEventListener('scroll', () =>
   });
   });
   let lastScrollPosition = 0;
-const sidebarToggle = document.querySelector('.brand-toggle');
-window.addEventListener('scroll', () => {
+  const sidebarToggle = document.querySelector('.brand-toggle');
+  window.addEventListener('scroll', () =>
+    {
     const currentScrollPosition = window.pageYOffset;
     if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 100) {
         sidebarToggle.style.opacity = '0';
